@@ -1,23 +1,30 @@
 import "./App.css"
 
 import React, { Component } from "react"
-import { NavBar } from "./components/NavBar"
+
 import { News } from "./components/News"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import NavBar from './components/NavBar';
+
 export default class App extends Component {
+   pageSize = 20
+   apiKey=process.env.REACT_APP_NEWS_API
    render() {
+      
+
       return (
          <div>
             <Router>
-               <NavBar />
-
+               <NavBar/>
+              
                <Routes>
                   <Route
                      exact
                      path="/general"
                      element={
-                        <News key='general' 
-                           pageSize={20}
+                        <News apiKey={this.apiKey}
+                           key="general"
+                           pageSize={this.pageSize}
                            country={"in"}
                            category={"general"}
                         />
@@ -28,8 +35,9 @@ export default class App extends Component {
                      exact
                      path="/business"
                      element={
-                        <News key='general' 
-                           pageSize={20}
+                        <News apiKey={this.apiKey}
+                           key="general"
+                           pageSize={this.pageSize}
                            country={"in"}
                            category={"business"}
                         />
@@ -40,8 +48,9 @@ export default class App extends Component {
                      exact
                      path="/entertainment"
                      element={
-                        <News key='entertainment' 
-                           pageSize={20}
+                        <News apiKey={this.apiKey}
+                           key="entertainment"
+                           pageSize={this.pageSize}
                            country={"in"}
                            category={"entertainment"}
                         />
@@ -52,8 +61,9 @@ export default class App extends Component {
                      exact
                      path="/health"
                      element={
-                        <News key='health'
-                           pageSize={20}
+                        <News apiKey={this.apiKey}
+                           key="health"
+                           pageSize={this.pageSize}
                            country={"in"}
                            category={"health"}
                         />
@@ -64,8 +74,9 @@ export default class App extends Component {
                      exact
                      path="/science"
                      element={
-                        <News key='science'
-                           pageSize={20}
+                        <News apiKey={this.apiKey}
+                           key="science"
+                           pageSize={this.pageSize}
                            country={"in"}
                            category={"science"}
                         />
@@ -76,8 +87,9 @@ export default class App extends Component {
                      exact
                      path="/sports"
                      element={
-                        <News key='sports' 
-                           pageSize={20}
+                        <News apiKey={this.apiKey}
+                           key="sports"
+                           pageSize={this.pageSize}
                            country={"in"}
                            category={"sports"}
                         />
@@ -88,8 +100,9 @@ export default class App extends Component {
                      exact
                      path="/technology"
                      element={
-                        <News key='technology' 
-                           pageSize={20}
+                        <News apiKey={this.apiKey}
+                           key="technology"
+                           pageSize={this.pageSize}
                            country={"in"}
                            category={"technology"}
                         />
@@ -99,8 +112,9 @@ export default class App extends Component {
                      exact
                      path="/"
                      element={
-                        <News key='/general' 
-                           pageSize={20}
+                        <News apiKey={this.apiKey}
+                           key="/general"
+                           pageSize={this.pageSize}
                            country={"in"}
                            category={"general"}
                         />
